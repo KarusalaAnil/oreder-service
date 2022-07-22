@@ -26,6 +26,9 @@ public class OrderController {
         //do reset call to payment and pass the order Id
     }
 
+    public void hello(){
+        System.out.println("added method in git hub");
+    }
     @PostMapping("/bookOrder")
 //    @RequestMapping(name = "/bookOrder")
     public TransactionResponse bookOrder(@RequestBody TransactionRequest request) throws JsonProcessingException {
