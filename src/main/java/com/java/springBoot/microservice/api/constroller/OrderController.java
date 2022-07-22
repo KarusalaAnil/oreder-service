@@ -21,6 +21,7 @@ public class OrderController {
 
     @PostMapping("/bookOrder1")
     public Order bookOrder1(@RequestBody Order order) {
+        System.out.println("hi this is order service saving");
         return orderService.saveOrder(order);
         //do reset call to payment and pass the order Id
     }
