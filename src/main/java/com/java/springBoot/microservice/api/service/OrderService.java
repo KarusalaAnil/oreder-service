@@ -57,4 +57,7 @@ public class OrderService {
         return orderRepository.save(order);
     }
 
+    public Order findOrderId(int orderId) {
+        return orderRepository.findById(orderId).get();
+    }
 }
