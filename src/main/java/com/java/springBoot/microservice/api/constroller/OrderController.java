@@ -7,10 +7,7 @@ import com.java.springBoot.microservice.api.commons.TransactionResponse;
 import com.java.springBoot.microservice.api.entity.Order;
 import com.java.springBoot.microservice.api.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/order")
@@ -24,6 +21,12 @@ public class OrderController {
         System.out.println("hi this is order service saving");
         return orderService.saveOrder(order);
         //do reset call to payment and pass the order Id
+    }
+
+    @PostMapping("/getOrder/{id}")
+    public Order getOrder(@PathVariable int orderId) {
+        System.out.println("Order Id : "+orderId);
+        return orderService.findOrderId(orderId);
     }
 
     public void hello(){
